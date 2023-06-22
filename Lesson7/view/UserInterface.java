@@ -2,6 +2,8 @@ package view;
 
 
 import model.ComplexNumber;
+import model.Logger;
+
 import java.util.Scanner;
 
 public class UserInterface {
@@ -48,6 +50,8 @@ public class UserInterface {
 
         ComplexNumber number2 = new ComplexNumber(real, imaginary);
 
+        Logger.getInstance().log("Sum: " + number1.divide(number2));
+
         return number1.add(number2);
     }
 
@@ -59,6 +63,8 @@ public class UserInterface {
         double imaginary = readDouble();
 
         ComplexNumber number2 = new ComplexNumber(real, imaginary);
+
+        Logger.getInstance().log("Product: " + number1.divide(number2));
 
         return number1.multiply(number2);
     }
@@ -72,7 +78,9 @@ public class UserInterface {
 
         ComplexNumber number2 = new ComplexNumber(real, imaginary);
 
+        Logger.getInstance().log("presenter.Division: " + number1.divide(number2));
         return number1.divide(number2);
+
     }
 
     private static double readDouble() {
